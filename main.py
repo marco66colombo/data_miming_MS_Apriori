@@ -9,6 +9,9 @@ with open(ROOT_DIR + '/files/input_data.txt', 'r') as filestream:
         currentline[-1] = currentline[-1].strip()
         transactions.append(currentline)
 
+f = open(ROOT_DIR + '/files/input_parameters.txt','r')
+
+
 print(transactions)
 
 
