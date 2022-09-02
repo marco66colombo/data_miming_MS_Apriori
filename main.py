@@ -1,7 +1,15 @@
 # This is a sample Python script.
 from config.config import ROOT_DIR
 
+transactions = []
 
-f = open(ROOT_DIR + '/files/input_data.txt', 'r')
+with open(ROOT_DIR + '/files/input_data.txt', 'r') as filestream:
+    for line in filestream:
+        currentline = line.split(",")
+        currentline[-1] = currentline[-1].strip()
+        transactions.append(currentline)
 
-print(f.readline())
+print(transactions)
+
+
+#dizionario per contare le occorrenze e poi ciclo sui valori per eliminare quelli sotto al minsup
