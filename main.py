@@ -34,11 +34,11 @@ with open(ROOT_DIR + '/files/input_parameters.txt', 'r') as filestream:
     print(SDC)
     print(MIS)
 
-def sort(transaction, sorting):
-    transaction = sorted(transaction, sorting)
-def init(transactions):
-    for transaction in transactions:
-        sort(transaction, lambda i : {MIS[i] if MIS.get(i) is not None else MIS['rest']})
+# def sort(transaction, sorting):
+#     transaction = sorted(transaction, sorting)
+# def init(transactions):
+#     for transaction in transactions:
+#         sort(transaction, lambda i : {MIS[i] if MIS.get(i) is not None else MIS['rest']})
 
 init(transactions)
 print(transactions)
