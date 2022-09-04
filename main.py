@@ -3,13 +3,14 @@ from config.config import ROOT_DIR
 
 
 # initializes the transactions by sorting their items by increasing values of MIS(item)
-def init(x, MIS):
-    for i in range(len(x)):
-        x[i] = sorted(x[i], key=lambda a: MIS[a] if MIS.get(a) is not None else MIS['rest'])
+def sort(T, MS):
+    for i in range(len(T)):
+        T[i] = sorted(T[i], key=lambda a: MS[a] if MS.get(a) is not None else MS['rest'])
+
+
 def main():
     transactions = []
-    SDC = 0.0
-    MIS = {}
+    MS = {}
 
     # reads file input data and generates a list of arrays containing the transactions
     with open(ROOT_DIR + '/files/input_data.txt', 'r') as filestream:
@@ -31,21 +32,15 @@ def main():
                 third = second[1].split("=")
 
                 if second[0] == "rest":
-                    MIS['rest'] = float(third[1])
+                    MS['rest'] = float(third[1])
                 else:
-                    MIS[second[0]] = float(third[1])
+                    MS[second[0]] = float(third[1])
 
             if line.startswith('SDC'):
                 currentline = line.split('=')
-                SDC = float(currentline[1])
+                MS['SDC'] = float(currentline[1])
 
-        print(transactions)
-        print(SDC)
-        print(MIS)
-        print(MIS)
-        print(MIS['rest'])
-        init(transactions,MIS)
-        print(transactions)
+        sort(transactions, MS)
 
 
 if __name__ == '__main__':
