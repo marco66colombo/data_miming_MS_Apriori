@@ -1,11 +1,13 @@
 # This is a sample Python script.
+from InitPass import initPass
 from config.config import ROOT_DIR
 
 
 # initializes the transactions by sorting their items by increasing values of MIS(item)
-def sort(T, MS):
+def sortTransactions(T, MS):
     for i in range(len(T)):
         T[i] = sorted(T[i], key=lambda a: MS[a] if MS.get(a) is not None else MS['rest'])
+
 
 
 def main():
@@ -41,7 +43,9 @@ def main():
                 currentline = line.split('=')
                 phi = float(currentline[1])
 
-        sort(transactions, MS)
+        sortTransactions(transactions, MS)
+        print(transactions)
+        initPass(transactions, MS)
 
 
 if __name__ == '__main__':
