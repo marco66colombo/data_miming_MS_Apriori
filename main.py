@@ -11,6 +11,7 @@ def sort(T, MS):
 def main():
     transactions = []
     MS = {}
+    phi = 0.0
 
     # reads file input data and generates a list of arrays containing the transactions
     with open(ROOT_DIR + '/files/input_data.txt', 'r') as filestream:
@@ -38,7 +39,7 @@ def main():
 
             if line.startswith('SDC'):
                 currentline = line.split('=')
-                MS['SDC'] = float(currentline[1])
+                phi = float(currentline[1])
 
         sort(transactions, MS)
 
