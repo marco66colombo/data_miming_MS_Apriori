@@ -45,7 +45,7 @@ def main():
 
         sortTransactions(transactions, MS)
         print(transactions)
-        initPass(transactions, MS)
+        L = initPass(transactions, MS)
 
 
 if __name__ == '__main__':
