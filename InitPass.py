@@ -11,3 +11,12 @@ def initPass(T, MS):
     L = I.items()
     return sorted(L, key=lambda a: MS[a[0]] if MS.get(a[0]) is not None else MS['rest'])
 
+
+def computeF1(L, MS, n):
+    F1 = []
+    for l in L:
+        mis = MS[l[0]] if MS.get(l[0]) is not None else MS['rest']
+        if l[1]/n >= mis:
+            F1.append(((l[0],),l[1]))
+    print(F1)
+    return F1
