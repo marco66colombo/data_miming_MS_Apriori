@@ -1,8 +1,6 @@
 # This is a sample Python script.
 from InitPass import *
 from Parse import *
-from config.config import ROOT_DIR
-
 
 def main():
     F = []
@@ -10,12 +8,11 @@ def main():
     L = initPass(transactions, MS)
     F.append(computeF1(L, MS, n))
 
-    print(n)
-    print(transactions)
-    print(phi)
-    print(L)
-    print(F)
-    print(F[0][0][0][0])
+    print('n = ' + n)
+    print('transactions = ' + transactions)
+    print('phi = ' + phi)
+    print('L = ' + L)
+    print('F = ' + F)
 
 
 if __name__ == '__main__':
