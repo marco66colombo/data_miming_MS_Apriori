@@ -40,8 +40,8 @@ with open(ROOT_DIR + '/files/input_parameters.txt', 'r') as filestream:
 #     for transaction in transactions:
 #         sort(transaction, lambda i : {MIS[i] if MIS.get(i) is not None else MIS['rest']})
 
-init(transactions)
-print(transactions)
+# init(transactions)
+# print(transactions)
 
 
 
