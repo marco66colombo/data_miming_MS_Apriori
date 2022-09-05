@@ -7,7 +7,7 @@ def checkSubset(C, c, k, MS):
 
     for s in S:
         if c[0][0] in s or MS[c[0][0]] == MS[c[0][1]]:
-            if not (set(s).issubset(c)):
+            if not (set(s).issubset(c[0])):
                 return
 
     C.append(c)
