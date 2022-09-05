@@ -9,7 +9,7 @@ def initPass(T, MS):
                 I[i] = 1
 
     L = I.items()
-    return sorted(L, key=lambda a: MS[a[0]] if MS.get(a[0]) is not None else MS['rest'])
+    return sorted(L, key=lambda a: MS[a[0]] if MS.get(a[0]) is not None else MS['rest']), I
 
 
 def computeF1(L, MS, n):

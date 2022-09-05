@@ -8,7 +8,7 @@ def main():
     F = []
     C = []
     transactions, MS, phi, n = parseFile()
-    L = initPass(transactions, MS)
+    L, L_map = initPass(transactions, MS)
     F.append(computeF1(L, MS, n))
 
     print('n =', n)
@@ -22,9 +22,10 @@ def main():
     #     if k == 2:
     #         C[0] = level2gen(L, phi, n, MS)
     #     else:
-    #         C[k-2] = msCandidateGen(F, phi)
+    #         C[k-2] = msCandidateGen(F, k, phi, MS, L_map, n)
 
     print(level2CandidateGen(L, phi, n, MS))
+
 
 
 if __name__ == '__main__':
