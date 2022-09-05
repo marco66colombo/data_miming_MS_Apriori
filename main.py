@@ -3,6 +3,8 @@ from InitPass import *
 from Parse import *
 from Level2CandidateGen import *
 from MSCandidateGen import *
+from PrintOut import printOutput
+
 
 def main():
     F = []
@@ -11,20 +13,12 @@ def main():
     L, L_map = initPass(transactions, MS)
     F.append(computeF1(L, MS, n))
 
-    print('n =', n)
-    print('transactions =', transactions)
-    print('phi =', phi)
-    print('L =', L)
-    print('F =', F)
-
     k = 2
     while len(F[k-2]) != 0:
         if k == 2:
              C.append(level2CandidateGen(L, phi, n, MS))
         else:
-             C.append(msCandidateGen(F, k, phi, MS, L_map, n))
-             print('candidate gen 3', msCandidateGen(F, k, phi, MS, L_map, n))
-    #print(level2CandidateGen(L, phi, n, MS))
+             C.append(msCandidateGen(F[k-2], k-1, phi, MS, L_map, n))
 
         for t in transactions:
             for z in range(len(C[k-2])):
@@ -34,12 +28,13 @@ def main():
         for c in C[k-2]:
             if c[1]/n >= (MS[c[0][0]] if MS.get(c[0][0]) is not None else MS['rest']):
                 F[k-1].append(c)
-        print(F[k-1])
-        print('k before increment =', k)
-        k += 1
-        print('k after increment =', k)
 
-        print('Final F is', F)
+        k += 1
+
+    F.pop()
+
+    printOutput(F);
+    print('Final F is', F)
 
 
 if __name__ == '__main__':

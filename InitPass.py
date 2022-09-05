@@ -17,6 +17,6 @@ def computeF1(L, MS, n):
     for l in L:
         mis = MS[l[0]] if MS.get(l[0]) is not None else MS['rest']
         if l[1]/n >= mis:
-            F1.append(((l[0],),l[1]))
-    print(F1)
+            F1.append(((l[0],), l[1]))
+
     return F1
