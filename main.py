@@ -18,14 +18,27 @@ def main():
     print('F =', F)
 
     k = 2
-    # while len(F[k-2]) != 0:
-    #     if k == 2:
-    #         C[0] = level2gen(L, phi, n, MS)
-    #     else:
-    #         C[k-2] = msCandidateGen(F, k, phi, MS, L_map, n)
+    while len(F[k-2]) != 0:
+        if k == 2:
+             C.append(level2CandidateGen(L, phi, n, MS))
+        else:
+             C.append(msCandidateGen(F, k, phi, MS, L_map, n))
+    #print(level2CandidateGen(L, phi, n, MS))
 
-    print(level2CandidateGen(L, phi, n, MS))
+        for t in transactions:
+            for c in C[k-2]:
+                if set(c).issubset(t):
+                    c[1] += 1
+        F.append([])
+        for c in C[k-2]:
+            if c[1]/n >= (MS[c[0][0]] if MS.get(c[0][0]) is not None else MS['rest']):
+                F[k-1].append(c)
+        print(F[k-1])
+        print('k before increment =', k)
+        k += 1
+        print('k after increment =', k)
 
+        print('Final F is', F)
 
 
 if __name__ == '__main__':
