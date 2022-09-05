@@ -3,7 +3,7 @@ from InitPass import *
 from Parse import *
 from Level2CandidateGen import *
 from MSCandidateGen import *
-from PrintOut import printOutput
+from PrintOut import *
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
     F.pop()
 
     printOutput(F);
-    print('Final F is', F)
+    printOutputTerminal(F)
 
 
 if __name__ == '__main__':
