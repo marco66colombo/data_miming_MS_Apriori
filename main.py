@@ -10,7 +10,8 @@ def main():
     F = []
     C = []
     transactions, MS, phi, n = parseFile()
-    L, L_map = initPass(transactions, MS)
+    L, L_map = initPass(transactions, MS, n)
+    print('L =', L)
     F.append(computeF1(L, MS, n))
 
     k = 2
