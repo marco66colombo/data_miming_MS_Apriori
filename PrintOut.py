@@ -1,8 +1,8 @@
 from config.config import ROOT_DIR
 
 
-def printOutput(F):
-    f_out = open(ROOT_DIR + '/files/output_2.txt', 'w')
+def printOutput(F, output_file):
+    f_out = open(ROOT_DIR + '/files/' + output_file, 'w')
 
     for i in range(len(F)):
         f_out.write('(Length-' + str(i+1) + " " + str(len(F[i])))

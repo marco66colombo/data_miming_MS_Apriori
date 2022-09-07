@@ -6,13 +6,13 @@ def sortTransactions(T, MS):
     for i in range(len(T)):
         T[i] = sorted(T[i], key=lambda a: MS[a] if MS.get(a) is not None else MS['rest'])
 
-def parseFile():
+def parseFile(input_data, input_parameters):
     transactions = []
     MS = {}
     phi = 0.0
 
     # reads file input data and generates a list of arrays containing the transactions
-    with open(ROOT_DIR + '/files/input_data_2.txt', 'r') as filestream:
+    with open(ROOT_DIR + '/files/' + input_data, 'r') as filestream:
         for line in filestream:
             currentline = line.split(",")
             currentline[-1] = currentline[-1].strip()
@@ -21,7 +21,7 @@ def parseFile():
 
     # reads file input data and generates a dictionary with pair key-value: x-MIS(x) and puts in var SDC the
     # correspondent value
-    with open(ROOT_DIR + '/files/input_parameters_2.txt', 'r') as filestream:
+    with open(ROOT_DIR + '/files/' + input_parameters, 'r') as filestream:
         for line in filestream:
 
             if line.startswith('MIS'):

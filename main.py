@@ -4,12 +4,13 @@ from Parse import *
 from Level2CandidateGen import *
 from MSCandidateGen import *
 from PrintOut import *
+import sys
 
 
 def main():
     F = []
     C = []
-    transactions, MS, phi, n = parseFile()
+    transactions, MS, phi, n = parseFile(sys.argv[1],sys.argv[2])
     L, L_map = initPass(transactions, MS, n)
     F.append(computeF1(L, MS, n))
 
@@ -33,7 +34,7 @@ def main():
 
     F.pop()
 
-    printOutput(F)
+    printOutput(F, sys.argv[3])
     printOutputTerminal(F)
 
 
