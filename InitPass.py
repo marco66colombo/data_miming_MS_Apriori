@@ -34,4 +34,6 @@ def computeF1(L, MS, n):
         if l[1]/n >= mis:
             F1.append(((l[0],), l[1]))
 
+        #print('elem: '+str(l[0])+' mis = ' + str(mis) + ' real sup: ' + str(l[1]/n) )
+
     return F1

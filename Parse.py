@@ -12,7 +12,7 @@ def parseFile():
     phi = 0.0
 
     # reads file input data and generates a list of arrays containing the transactions
-    with open(ROOT_DIR + '/files/input_data.txt', 'r') as filestream:
+    with open(ROOT_DIR + '/files/input_data_2.txt', 'r') as filestream:
         for line in filestream:
             currentline = line.split(",")
             currentline[-1] = currentline[-1].strip()
@@ -21,7 +21,7 @@ def parseFile():
 
     # reads file input data and generates a dictionary with pair key-value: x-MIS(x) and puts in var SDC the
     # correspondent value
-    with open(ROOT_DIR + '/files/input_parameters.txt', 'r') as filestream:
+    with open(ROOT_DIR + '/files/input_parameters_2.txt', 'r') as filestream:
         for line in filestream:
 
             if line.startswith('MIS'):

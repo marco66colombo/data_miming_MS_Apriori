@@ -11,7 +11,6 @@ def main():
     C = []
     transactions, MS, phi, n = parseFile()
     L, L_map = initPass(transactions, MS, n)
-    print('L =', L)
     F.append(computeF1(L, MS, n))
 
     k = 2
@@ -34,7 +33,7 @@ def main():
 
     F.pop()
 
-    printOutput(F);
+    printOutput(F)
     printOutputTerminal(F)
 
 
