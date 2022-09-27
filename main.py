@@ -11,7 +11,9 @@ def main():
     F = []
     C = []
     transactions, MS, phi, n = parseFile(sys.argv[1],sys.argv[2])
+
     L, L_map = initPass(transactions, MS, n)
+
     F.append(computeF1(L, MS, n))
 
     k = 2

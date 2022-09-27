@@ -43,7 +43,6 @@ def parseFile(input_data, input_parameters):
                 currentline = line.split('=')
                 phi = float(currentline[1].strip())
 
-    print(MS);
     #sortTransactions(transactions, MS)
     n = len(transactions)
 
