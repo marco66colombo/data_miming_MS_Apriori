@@ -8,7 +8,7 @@ def initPass(T, MS, n):
                 I[i] = I[i] + 1
             else:
                 I[i] = 1
-
+    print(I)
     L_pre = sorted(I.items(), key=lambda a: MS[a[0]] if MS.get(a[0]) is not None else MS['rest'])
 
     i = 0

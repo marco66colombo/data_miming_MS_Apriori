@@ -9,7 +9,9 @@ def printOutput(F, output_file):
         for elem in F[i]:
             string = str(elem[0]).replace('\'', '').replace(',', '')
             f_out.write(string)
+            f_out.write('\n')
         f_out.write(')')
+        f_out.write('\n')
 
     f_out.close()
 
