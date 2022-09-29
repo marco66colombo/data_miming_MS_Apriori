@@ -5,7 +5,7 @@ def printOutput(F, output_file):
     f_out = open(ROOT_DIR + '/files/' + output_file, 'w')
 
     for i in range(len(F)):
-        f_out.write('(Length-' + str(i+1) + " " + str(len(F[i])))
+        f_out.write('(Length-' + str(i+1) + " " + str(len(F[i])) + '\n')
         for elem in F[i]:
             string = str(elem[0]).replace('\'', '').replace(',', '')
             f_out.write(string)
