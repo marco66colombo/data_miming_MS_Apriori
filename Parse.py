@@ -15,7 +15,7 @@ def parseFile(input_data, input_parameters):
     # reads file input data and generates a list of arrays containing the transactions
     with open(ROOT_DIR + '/files/' + input_data, 'r') as filestream:
         for line1 in filestream:
-            line = line1.replace(" ","")
+            line = line1.replace(" ", "")#.replace("{", "").replace("}", "")
             currentline = line.split(",")
             currentline[-1] = currentline[-1].strip()
             #for i in range(len(currentline)): currentline[i] = currentline[i].replace(" ", "")
@@ -45,5 +45,7 @@ def parseFile(input_data, input_parameters):
 
     #sortTransactions(transactions, MS)
     n = len(transactions)
+
+    print(transactions)
 
     return transactions, MS, phi, n
